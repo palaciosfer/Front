@@ -3,7 +3,7 @@ import { Logo } from "./ImgHome";
 export function Navigation() {
   return (
     <>
-      <nav className=" bg-opacity-20 bg-[#A2A746] p-3 w-full">
+      <nav className=" bg-[#A2A746] p-3 w-full">
         <ul className="flex flex-col md:flex-row text-white items-center justify-around">
           <li className="flex items-center mb-4 md:mb-0">
             <Logo />

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MainBackground } from "../Moleculas/MainBackground";
 import { CardData } from "../Moleculas/CardDate";
 import { AuthContainer } from "../Moleculas/AuthContainer";
 import { ImgHome } from "../Moleculas/ImgHome";
@@ -64,19 +63,16 @@ export function LoginForm() {
   };
 
   return (
-    <MainBackground>
+    <seccion className={`w-full h-screen flex `}>
       <AuthContainer className="flex sm:flex-row flex-col items-center justify-center bg-black animate-fade-right animate-duration-[2000ms]">
         <CardData>
           <form className="flex flex-col w-full sm:w-4/5 mt-7" onSubmit={handleForm}>
             <label>
               <Paragraphs text="Nombre:" />
-              <InputT type="text" name="name" placeholder="Nombresss" value={formData.name} onChange={handleChange} />
+              <InputT type="text" name="name" placeholder="Nombres" value={formData.name} onChange={handleChange} />
             </label>
 
-            <label className="mt-4">
-              <Paragraphs text="Apellido:" />
-              <InputT type="text" name="lastname" placeholder="Apellido" value={formData.lastname} onChange={handleChange} />
-            </label>
+
 
             <label className="mt-4">
               <Paragraphs text="Correo:" />
@@ -97,6 +93,6 @@ export function LoginForm() {
         </CardData>
         <ImgHome />
       </AuthContainer>
-    </MainBackground>
+    </seccion>
   );
 }

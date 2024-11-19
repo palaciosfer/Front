@@ -4,7 +4,6 @@ import { DoubleContainer } from './DoubleContainer';
 import NivelAgua from './GfHumedad';
 import EChartsComponent from "./GfTemYHume";
 
-
 export function DataMonitoring() {
   const temperatureOptions = {
     title: { text: 'Humedada' },
@@ -15,13 +14,14 @@ export function DataMonitoring() {
     xAxis: { type: 'category', boundaryGap: false, data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
     yAxis: { type: 'value' },
     series: [
-      { name: 'Email', type: 'line', stack: 'Total', data: [120, 132, 101, 134, 90, 230, 210] },
-      { name: 'Union Ads', type: 'line', stack: 'Total', data: [220, 182, 191, 234, 290, 330, 310] },
-      { name: 'Video Ads', type: 'line', stack: 'Total', data: [150, 232, 201, 154, 190, 330, 410] },
-      { name: 'Direct', type: 'line', stack: 'Total', data: [320, 332, 301, 334, 390, 330, 320] },
-      { name: 'Search Engine', type: 'line', stack: 'Total', data: [820, 932, 901, 934, 1290, 1330, 1320] },
+      { name: 'Search Engine', type: 'line', stack: 'Total', areaStyle: {}, data: [820, 932, 901, 934, 1290, 1330, 1320] },
+      { name: 'Direct', type: 'line', stack: 'Total', areaStyle: {}, data: [320, 332, 301, 334, 390, 330, 320] },
+      { name: 'Video Ads', type: 'line', stack: 'Total', areaStyle: {}, data: [150, 232, 201, 154, 190, 330, 410] },
+      { name: 'Union Ads', type: 'line', stack: 'Total', areaStyle: {}, data: [220, 182, 191, 234, 290, 330, 310] },
+      { name: 'Email', type: 'line', stack: 'Total', areaStyle: {}, data: [120, 132, 101, 134, 90, 230, 210] },
     ],
   };
+
   const Humedad = {
     title: { text: 'Temperatura' },
     tooltip: { trigger: 'axis' },
@@ -34,9 +34,10 @@ export function DataMonitoring() {
       { name: 'Tipo C', type: 'line', data: [150, 140, 160, 170, 180] },
     ],
   };
+
   return (
-    <DoubleContainer className="flex justify-center">
-      <article className="w-full p-6">
+    <DoubleContainer>
+      <article className="w-full h-full p-6">
         <header className="mt-3">
           <Titles text="Datos de Monitoreo" />
         </header>
@@ -45,12 +46,11 @@ export function DataMonitoring() {
             <EChartsComponent option={temperatureOptions} style={{ width: '100%', height: '400px' }} />
           </div>
           <div className="bg-white rounded-lg shadow-lg p-4">
-          
             <EChartsComponent option={Humedad} style={{ width: '100%', height: '400px' }} />
-          </div> 
+          </div>
           <div className="bg-white rounded-lg shadow-lg p-4">
             <NivelAgua /> 
-          </div> 
+          </div>
           <div className="bg-white rounded-lg shadow-lg p-4">
           </div>
         </section>

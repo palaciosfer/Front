@@ -5,14 +5,13 @@ import DataTable from "./Table";
 
 export function History() {
   return (
-    <DoubleContainer className="flex flex-col h-screen">
-      <article className="flex flex-col flex-grow p-5">
-        <header >
+    <DoubleContainer className="flex flex-col">
+      <article className="flex flex-col flex-grow p-5 overflow-hidden">
+        <header>
           <Titles text="Historial de datos" />
         </header>
-        <section className="flex-grow flex flex-col mt-3">
-       
-          <DataTable className="flex-grow" />
+        <section className="flex-grow flex flex-col mt-3 overflow-hidden">
+          <DataTable className="flex-grow overflow-auto" />
         </section>
       </article>
     </DoubleContainer>

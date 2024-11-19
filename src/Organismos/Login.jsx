@@ -6,7 +6,6 @@ import { useState } from "react";
 import { InputT } from "../Atomos/Input";
 import { Paragraphs } from "../Atomos/Texts";
 import { ButtonI } from "../Atomos/Button";
-import { MainBackground } from "../Moleculas/MainBackground";
 
 export function Login() {
   const navigate = useNavigate();
@@ -37,7 +36,7 @@ export function Login() {
 
   return (
     <>
-      <MainBackground>
+      <seccion className={`w-full h-screen flex `}>
       <AuthContainer className="flex sm:flex-row flex-col items-center justify-center bg-black animate-fade-right animate-duration-[2000ms]">
         <ImgHome />
           <CardData text="Login">
@@ -74,7 +73,7 @@ export function Login() {
             </form>
           </CardData>
         </AuthContainer>
-      </MainBackground>
+       </seccion>
     </>
   );
 }
